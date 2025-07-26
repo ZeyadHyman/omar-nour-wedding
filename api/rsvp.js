@@ -1,11 +1,10 @@
-// api/rsvp.js
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
   const url =
-    "https://script.google.com/macros/s/AKfycbylknpgC7fL7nZWd7ZdrjOStQNecRAY3P8T8R7V--goGd9mbx2HlPqwou9tqzeo_Ju8-Q/exec";
+    "https://script.google.com/macros/s/AKfycbzXvlC_X1X7u6IsJnKBX0uYurp1-iS3MFjxbioiwwVb3DsKS9SW4dGSfs608FSs6gqbnQ/exec";
 
   try {
     // Validate request body
