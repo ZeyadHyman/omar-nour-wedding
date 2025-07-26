@@ -4,9 +4,27 @@ function RSVP() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ name: "", message: "" });
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) {
+      newErrors.name = "الاسم مطلوب";
+    }
+    if (formData.name.trim().length < 2) {
+      newErrors.name = "الاسم يجب أن يكون أكثر من حرفين";
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -18,6 +36,14 @@ function RSVP() {
 
       if (response.ok) {
         setSubmitted(true);
+        // Reset form
+        setFormData({ name: "", message: "" });
+        setErrors({});
+
+        // Trigger messages refresh after 2 seconds
+        setTimeout(() => {
+          window.dispatchEvent(new CustomEvent('refreshMessages'));
+        }, 2000);
       } else {
         throw new Error("Failed to submit");
       }
@@ -30,10 +56,25 @@ function RSVP() {
   };
 
   const handleInputChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: "",
+      });
+    }
+  };
+
+  const handleReset = () => {
+    setSubmitted(false);
+    setFormData({ name: "", message: "" });
+    setErrors({});
   };
 
   return (
@@ -43,7 +84,7 @@ function RSVP() {
     >
       <div className="text-center mb-6">
         <h3 className="text-3xl font-bold text-[#66564a] mb-2">هتنورونا؟</h3>
-        <p className="text-[#a08c7a] text-lg">فرحتنا مش هتكمل من غير وجودكم معانا </p>
+        <p className="text-[#a08c7a] text-lg">فرحتنا مش هتكمل من غير وجودكم معانا ❤️</p>
       </div>
 
       {submitted ? (
@@ -64,7 +105,13 @@ function RSVP() {
             </svg>
           </div>
           <h4 className="text-2xl font-bold text-green-700 mb-2">تمام كده!</h4>
-          <p className="text-green-600 text-lg">شكراً لتأكيد الحضور! مستنيينكم تفرحوا معانا 🎉</p>
+          <p className="text-green-600 text-lg mb-6">شكراً لتأكيد الحضور! مستنيينكم تفرحوا معانا 🎉</p>
+          <button
+            onClick={handleReset}
+            className="bg-[#e6d9b9] text-[#66564a] font-semibold py-2 px-6 rounded-xl hover:bg-[#d1c1a1] transition-colors duration-300"
+          >
+            أكتب رسالة تانية
+          </button>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -81,10 +128,16 @@ function RSVP() {
               type="text"
               value={formData.name}
               onChange={handleInputChange}
-              className="w-full p-4 rounded-2xl border-2 border-[#e6d9b9] bg-white/50 backdrop-blur-sm focus:border-[#66564a] focus:outline-none focus:ring-2 focus:ring-[#66564a]/20 transition-all duration-300 text-lg"
+              className={`w-full p-4 rounded-2xl border-2 bg-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 transition-all duration-300 text-lg ${errors.name
+                  ? 'border-red-300 focus:border-red-500 focus:ring-red-200'
+                  : 'border-[#e6d9b9] focus:border-[#66564a] focus:ring-[#66564a]/20'
+                }`}
               placeholder="اكتب اسمك هنا"
               required
             />
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+            )}
           </div>
 
           <div>
@@ -101,7 +154,7 @@ function RSVP() {
               onChange={handleInputChange}
               rows="4"
               className="w-full p-4 rounded-2xl border-2 border-[#e6d9b9] bg-white/50 backdrop-blur-sm focus:border-[#66564a] focus:outline-none focus:ring-2 focus:ring-[#66564a]/20 transition-all duration-300 text-lg resize-none"
-              placeholder="ابعت كلمة حلوة للعرايس"
+              placeholder="ابعت كلمة حلوة للعرايس ❤️"
             />
           </div>
 
