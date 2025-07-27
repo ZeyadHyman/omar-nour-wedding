@@ -1,6 +1,6 @@
-import cardImage from "../assets/image(1).png";
-import leftFlowerDecoration from "../assets/leftFloweDecoration.png";
-import rightFlowerDecoration from "../assets/rightFloweDecoration.png";
+import cardImage from "../assets/image.webp";
+import leftFlowerDecoration from "../assets/leftFloweDecoration.webp";
+import rightFlowerDecoration from "../assets/rightFloweDecoration.webp";
 import RSVP from "./RSVP";
 import GuestMessages from "./GuestMessages";
 
@@ -34,9 +34,9 @@ function Landing() {
 
       {/* البطاقة */}
       <div className="relative z-10 w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 mb-8">
-        <div className="backdrop-blur-md bg-white/60 border border-[#e6d9b9] rounded-3xl p-6 flex flex-col items-center transition-transform duration-500 animate-fade-in delay-500 hover:scale-105">
-          <img src={cardImage} alt="Wedding" className="w-2/3 h-auto object-cover rounded-2xl shadow-md" />
-          <div className="text-center mt-4">
+        <div className="backdrop-blur-md bg-white/60 border border-[#e6d9b9] rounded-3xl p-6 flex flex-col items-center transition-transform duration-500 animate-fade-in delay-500 ">
+          <img src={cardImage} alt="Wedding" className="w-2/3 h-auto object-cover rounded-2x" />
+          <div className="text-center ">
             <p className="text-[#66564a] text-lg md:text-xl font-medium leading-relaxed">
               وجودكم هو اللي هيكمل فرحتنا <br /> متنسوش تيجوا وتشاركونا أحلى لحظة في حياتنا ❤️
             </p>

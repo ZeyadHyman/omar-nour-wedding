@@ -84,7 +84,7 @@ function RSVP() {
     >
       <div className="text-center mb-6">
         <h3 className="text-3xl font-bold text-[#66564a] mb-2">هتنورونا؟</h3>
-        <p className="text-[#a08c7a] text-lg">فرحتنا مش هتكمل من غير وجودكم معانا ❤️</p>
+        <p className="text-[#a08c7a] text-lg">فرحتنا مش هتكمل من غير وجودكم معانا </p>
       </div>
 
       {submitted ? (
@@ -129,8 +129,8 @@ function RSVP() {
               value={formData.name}
               onChange={handleInputChange}
               className={`w-full p-4 rounded-2xl border-2 bg-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 transition-all duration-300 text-lg ${errors.name
-                  ? 'border-red-300 focus:border-red-500 focus:ring-red-200'
-                  : 'border-[#e6d9b9] focus:border-[#66564a] focus:ring-[#66564a]/20'
+                ? 'border-red-300 focus:border-red-500 focus:ring-red-200'
+                : 'border-[#e6d9b9] focus:border-[#66564a] focus:ring-[#66564a]/20'
                 }`}
               placeholder="اكتب اسمك هنا"
               required
@@ -154,7 +154,7 @@ function RSVP() {
               onChange={handleInputChange}
               rows="4"
               className="w-full p-4 rounded-2xl border-2 border-[#e6d9b9] bg-white/50 backdrop-blur-sm focus:border-[#66564a] focus:outline-none focus:ring-2 focus:ring-[#66564a]/20 transition-all duration-300 text-lg resize-none"
-              placeholder="ابعت كلمة حلوة للعرايس ❤️"
+              placeholder="ابعت كلمة حلوة للعرايس "
             />
           </div>
 
@@ -188,7 +188,7 @@ function RSVP() {
                 بيتم الإرسال...
               </div>
             ) : (
-              "أيوه جايين إن شاء الله!"
+              "أرسال"
             )}
           </button>
         </form>

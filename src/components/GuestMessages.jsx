@@ -58,7 +58,6 @@ function GuestMessages() {
     <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl mt-8 mx-5 md:mx-auto md:max-w-4xl border border-[#e6d9b9]/50" dir="rtl">
       <div className="text-center mb-8">
         <h3 className="text-3xl font-bold text-[#66564a] mb-2">رسائل الحضور</h3>
-        <p className="text-[#a08c7a] text-lg mb-4">كلمات حلوة من أحبابنا ❤️</p>
 
         {/* Refresh Button */}
         <button
