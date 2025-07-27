@@ -8,13 +8,11 @@ function Landing() {
   return (
     <div className="min-h-screen w-full flex flex-col justify-center items-center relative overflow-hidden py-8">
 
-      {/* الزينة */}
       <img src={leftFlowerDecoration} alt="" className="absolute top-0 left-0 w-32 md:w-48 opacity-70 rotate-[150deg] pointer-events-none select-none z-0" />
       <img src={rightFlowerDecoration} alt="" className="absolute top-0 right-0 w-32 md:w-48 opacity-70 rotate-[210deg] pointer-events-none select-none z-0" />
       <img src={leftFlowerDecoration} alt="" className="absolute bottom-0 left-0 w-24 md:w-36 opacity-40 rotate-45 pointer-events-none select-none z-0" />
       <img src={rightFlowerDecoration} alt="" className="absolute bottom-0 right-0 w-24 md:w-36 opacity-40 rotate-[-45deg] pointer-events-none select-none z-0" />
 
-      {/* العنوان */}
       <div className="relative z-10 flex flex-col items-center mb-8 text-center px-4">
         <h1 className="text-5xl md:text-7xl font-bold text-[#66564a] drop-shadow-lg mb-5 tracking-wide animate-fade-in">
           فرح
@@ -32,7 +30,6 @@ function Landing() {
         </p>
       </div>
 
-      {/* البطاقة */}
       <div className="relative z-10 w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 mb-8">
         <div className="backdrop-blur-md bg-white/60 border border-[#e6d9b9] rounded-3xl p-6 flex flex-col items-center transition-transform duration-500 animate-fade-in delay-500 ">
           <img src={cardImage} alt="Wedding" className="w-2/3 h-auto object-cover rounded-2x" />
@@ -44,10 +41,7 @@ function Landing() {
         </div>
       </div>
 
-      {/* RSVP Section */}
       <RSVP />
-
-      {/* Guest Messages Section */}
       <GuestMessages />
     </div>
   );
