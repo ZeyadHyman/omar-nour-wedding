@@ -10,7 +10,7 @@ function Landing() {
   const weddingDetails = {
     date: "الأحد ٢٩ مارس ٢٠٢٦",
     time: "٨:٠٠ مساءً",
-    venue: "قاعة السريا",
+    venue: "قاعة السرايا",
     location: "شارع ترعة الإسماعيلية، بهتيم، شبرا الخيمة",
     mapLink: "https://maps.app.goo.gl/68EGfQNf6QBxoZ6i7",
     embedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3451.433644949624!2d31.2635458!3d30.1104025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145815554d94b673%3A0x553cb76480b0b6f8!2z2YLYp9i52Ycg2KfZhNiz2LHYp9mK2Kc!5e0!3m2!1sen!2seg!4v1766831527219!5m2!1sen!2seg"
