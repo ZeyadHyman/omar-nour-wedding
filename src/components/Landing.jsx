@@ -71,7 +71,7 @@ function Landing() {
       {/* Header Section */}
       <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-6xl mx-auto">
         <div className="mb-6">
-          <div className="text-5xl md:text-7xl font-bold text-[#66564a] drop-shadow-lg mb-2 tracking-wider animate-fade-in">
+          <div className="text-5xl md:text-7xl font-bold text-[#66564a] drop-shadow-lg mb-3 tracking-wider animate-fade-in">
             فرح
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-[#8b7355] mb-4 animate-fade-in delay-100">
