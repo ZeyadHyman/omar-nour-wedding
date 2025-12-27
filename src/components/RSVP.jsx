@@ -79,7 +79,7 @@ function RSVP() {
 
   return (
     <div
-      className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl mt-8 mx-5 md:mx-auto md:max-w-2xl border border-[#e6d9b9]/50 animate-fade-in delay-500"
+      className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl mt-8 max-w-6xl mx-auto border border-[#e6d9b9]/50 animate-fade-in delay-500"
       dir="rtl"
     >
       <div className="text-center mb-6">
