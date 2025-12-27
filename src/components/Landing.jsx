@@ -9,7 +9,7 @@ import { useEffect } from "react";
 function Landing() {
   const weddingDetails = {
     date: "الأحد ٢٩ مارس ٢٠٢٦",
-    time: "٨:٠٠ مساءً",
+    time: "٧:٠٠ مساءً",
     venue: "قاعة السرايا",
     location: "شارع ترعة الإسماعيلية، بهتيم، شبرا الخيمة",
     mapLink: "https://maps.app.goo.gl/68EGfQNf6QBxoZ6i7",
